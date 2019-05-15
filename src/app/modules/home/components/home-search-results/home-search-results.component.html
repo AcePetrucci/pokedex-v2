@@ -1,0 +1,21 @@
+<div class="results">
+  <div class="title">
+    Searching for:
+  </div>
+
+  <div class="labels">
+    <div
+      class="label"
+      *ngFor="let pokemon of clonedPokemonResults"
+      [ngStyle]="{'background-color': 'rgb(' + pokemon.color + ')'}"
+    >
+      <div class="image">
+        <img src="assets/images/pokemon/{{pokemon.name}}.png" (load)="getBackgroundColor($event, pokemon)" alt="Pokemon Art">
+      </div>
+
+      <div class="name">
+        {{ pokemon.name }}
+      </div>
+    </div>
+  </div>
+</div>

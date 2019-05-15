@@ -1,0 +1,38 @@
+@import '~src/assets/stylus/_colors';
+@import '~src/assets/stylus/_rem';
+
+.search
+  width rem(860)
+  margin 0 auto
+  position relative
+
+  & > .field
+    display flex
+    text-align center
+    position relative
+    z-index 1
+
+    & > input
+      font-size rem(16)
+      padding rem(24) rem(56)
+      background-color $inputBgColor
+      color $inputColor
+      border-top-left-radius 3px
+      border-bottom-left-radius 3px
+      font-weight 300
+      border none
+      width 100%
+      margin 0 auto
+      outline none
+
+      &::placeholder
+        color $inputColor
+        opacity 0.7
+
+    & > .icon
+      position absolute
+      font-size rem(32)
+      color $inputColor
+      left rem(12)
+      top 50%
+      transform translateY(-50%)

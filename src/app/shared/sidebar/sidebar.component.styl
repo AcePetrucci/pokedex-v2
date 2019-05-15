@@ -1,5 +1,5 @@
-@import '../../../assets/stylus/_colors';
-@import '../../../assets/stylus/_rem';
+@import '~src/assets/stylus/_colors';
+@import '~src/assets/stylus/_rem';
 
 :host
   width 200px
@@ -10,6 +10,8 @@
   background $sidebarBG
   padding 36px 20px
   transition width 0.3s ease
+  border-right 1px solid rgba(55, 43, 96, 0.5)
+  box-shadow rgba(21, 11, 37, 0.5) 2px 0px 10px 2px;
 
   &.-closed
     width 60px

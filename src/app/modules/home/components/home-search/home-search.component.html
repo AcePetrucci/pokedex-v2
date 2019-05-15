@@ -1,0 +1,13 @@
+<div class="search">
+  <div class="field">
+    <span class="icon pe-7s-search"></span>
+    <input
+      type="text"
+      placeholder="Search for Pokemon..."
+      (keyup)="searchPokemon()"
+      [(ngModel)]="pokemonName"
+    >
+  </div>
+
+  <ng-content select="app-home-search-results"></ng-content>
+</div>

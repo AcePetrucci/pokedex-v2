@@ -1,5 +1,5 @@
-@import '../../../assets/stylus/_colors';
-@import '../../../assets/stylus/_rem';
+@import '~src/assets/stylus/_colors';
+@import '~src/assets/stylus/_rem';
 
 .home
   width 100%
@@ -23,51 +23,3 @@
       width 860px
       margin 0 auto
       margin-bottom rem(80)
-
-    & > .search
-      text-align center
-      position relative
-      display flex
-      width rem(960)
-      margin 0 auto
-
-      & > input
-        font-size rem(16)
-        padding rem(24) rem(56)
-        background-color $inputBgColor
-        color $inputColor
-        border-top-left-radius 3px
-        border-bottom-left-radius 3px
-        font-weight 300
-        border none
-        width calc(100% - 7rem)
-        margin 0 auto
-        outline none
-
-        &::placeholder
-          color $inputColor
-          opacity 0.7
-
-      & > .icon
-        position absolute
-        font-size rem(32)
-        color $inputColor
-        left rem(12)
-        top 50%
-        transform translateY(-50%)
-
-      & > button
-        width rem(70)
-        background-color $inputColor
-        color $fontPrimaryColor
-        font-size rem(14)
-        padding rem(10) rem(20)
-        outline none
-        border none
-        border-top-right-radius 3px
-        border-bottom-right-radius 3px
-        display flex
-        justify-content center
-        align-items center
-        text-transform uppercase
-        cursor pointer

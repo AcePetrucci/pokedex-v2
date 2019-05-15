@@ -4,10 +4,11 @@
       The most beautiful, objective and elegant Pokédex out there <i> (maybe not) </i>
     </h1>
 
-    <div class="search">
-      <span class="icon pe-7s-search"></span>
-      <input type="text" placeholder="Search for Pokemon...">
-      <button> Go </button>
-    </div>
+    <app-home-search (onSearch)="searchPokemon($event)">
+      <app-home-search-results
+        *ngIf="pokemonResults$ | async as pokemonResults"
+        [pokemonResults]="pokemonResults"
+      ></app-home-search-results>
+    </app-home-search>
   </div>
 </section>
