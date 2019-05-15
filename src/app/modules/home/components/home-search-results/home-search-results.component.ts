@@ -10,9 +10,7 @@ import { PokemonBasicInfo } from 'src/app/core/models';
 })
 export class HomeSearchResultsComponent {
 
-  @OnChange(function() {
-    this.clonedPokemonResults = [ ...this.pokemonResults ];
-  })
+  @OnChange(function() { this.clonedPokemonResults = [ ...this.pokemonResults ]; })
   @Input() pokemonResults: PokemonBasicInfo[];
 
   clonedPokemonResults: PokemonBasicInfo[];
