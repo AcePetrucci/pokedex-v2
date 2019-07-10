@@ -5,6 +5,10 @@ import { HomeComponent } from './home.component';
 import { HomeSearchResultsComponent } from './components/home-search-results/home-search-results.component';
 import { HomeSearchComponent } from './components/home-search/home-search.component';
 
+import { HomePokemonService } from './services/home-pokemon.service';
+
+import { SharedModule } from 'src/app/shared/shared.module';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -14,6 +18,10 @@ import { HomeSearchComponent } from './components/home-search/home-search.compon
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
+  ],
+  providers: [
+    HomePokemonService
   ],
   exports: [
     HomeSearchComponent,

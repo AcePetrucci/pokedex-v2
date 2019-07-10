@@ -13,9 +13,7 @@
         <img src="assets/images/pokemon/{{pokemon.name}}.png" (load)="getBackgroundColor($event, pokemon)" alt="Pokemon Art">
       </div>
 
-      <div class="name">
-        {{ pokemon.name }}
-      </div>
+      <div class="name" [innerHTML]="pokemon.exhibitionName | sanitizeHtml"></div>
     </div>
   </div>
 </div>

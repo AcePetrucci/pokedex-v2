@@ -4,6 +4,8 @@ import { PokemonService } from 'src/app/core/services/pokemon.service';
 import { Observable } from 'rxjs';
 import { PokemonBasicInfo } from 'src/app/core/models';
 
+import { HomePokemonService } from './services/home-pokemon.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +15,9 @@ export class HomeComponent {
 
   pokemonResults$: Observable<PokemonBasicInfo[]>;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(
+    private homePokemonService: HomePokemonService,
+  ) { }
 
   searchPokemon(name: string) {
     if (name === '') {
@@ -21,7 +25,7 @@ export class HomeComponent {
       return false;
     }
 
-    this.pokemonResults$ = this.pokemonService.searchPokemonByName(name);
+    this.pokemonResults$ = this.homePokemonService.searchPokemonByName(name);
   }
 
 }

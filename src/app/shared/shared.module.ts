@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 
+import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -11,13 +13,15 @@ import { WrapperComponent } from './wrapper/wrapper.component';
   ],
   declarations: [
     SidebarComponent,
-    WrapperComponent
+    WrapperComponent,
+    SanitizeHtmlPipe,
   ],
   exports: [
     CommonModule,
     RouterModule,
     SidebarComponent,
     WrapperComponent,
+    SanitizeHtmlPipe,
   ],
 })
 
