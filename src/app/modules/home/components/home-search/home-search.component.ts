@@ -12,11 +12,11 @@ export class HomeSearchComponent implements OnDestroy {
   @Output() onSearch: EventEmitter<string> = new EventEmitter();
 
   private _searchDebouncer: Subject<string> = new Subject();
-  private destroy: Subject<boolean> = new Subject();
+  private _destroy: Subject<boolean> = new Subject();
   pokemonName: string;
 
   constructor() {
-    this._searchDebouncer.pipe(debounceTime(500), takeUntil(this.destroy)).subscribe(name => this.onSearch.emit(name))
+    this._searchDebouncer.pipe(debounceTime(500), takeUntil(this._destroy)).subscribe(name => this.onSearch.emit(name))
   }
 
   searchPokemon() {
@@ -24,7 +24,7 @@ export class HomeSearchComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.destroy.next(true);
-    this.destroy.unsubscribe();
+    this._destroy.next(true);
+    this._destroy.unsubscribe();
   }
 }
